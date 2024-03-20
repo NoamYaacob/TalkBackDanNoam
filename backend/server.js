@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/talkback', {
     useUnifiedTopology: true,
     useCreateIndex: true
 }).then(() => console.log('MongoDB connected'))
-.catch(err => console.log(err));
+    .catch(err => console.log(err));
 
 
 app.post('/signup', async (req, res) => {
