@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -18,13 +19,13 @@ reportWebVitals();
 
 
 
-//dan add for registerpage
-const express = require("express");
-const app = express();
-app.get("/hello", (req, res) => {
-  res.send("hello world");
-});
+// //dan add for registerpage
+// const express = require("express");
+// const app = express();
+// app.get("/hello", (req, res) => {
+//   res.send("hello world");
+// });
 
-app.listen(1337, () => {
-  console.log("server started on 1337");
-});
+// app.listen(5000, () => {
+//   console.log("server started on 5000");
+// });
