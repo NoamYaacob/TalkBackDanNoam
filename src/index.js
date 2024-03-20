@@ -15,3 +15,16 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+
+//dan add for registerpage
+const express = require("express");
+const app = express();
+app.get("/hello", (req, res) => {
+  res.send("hello world");
+});
+
+app.listen(1337, () => {
+  console.log("server started on 1337");
+});
