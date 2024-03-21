@@ -2,19 +2,22 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const User = require('./models/User');
+const dotenv = require('dotnev');
 
 const app = express();
-const port = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost/talkback', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-}).then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
+const connect=()=>{mongoose.connect(
+    process.env.MONGO).then(() => {
+    app.listen(PORT, () => {
+        console.log(`server listen to port ${PORT}`);
+    });
+}
+);
+}
 
 
 app.post('/signup', async (req, res) => {
@@ -39,6 +42,3 @@ app.post('/login', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
